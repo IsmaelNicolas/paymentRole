@@ -13,31 +13,37 @@ int main()
 
     Menu menu;
     int opcion,transaccion;
-    string opcMenu[] = {"Crear Cuenta","Movimientos","Mostrar","Salir"};
+    string opcMenu[] = {"Crear Usuario","Ver roles de pago","Buscar Usuario","Salir"};
     string SubMenuTransacciones[] = {"Retiro","Deposito","Atras"};
-    string SubMenuMostrar[] = { "Mostrar Cuentas","Buscar una cuenta","Atras" };
+    string SubMenuMostrar[] = { "Ver usuario","Eliminar usuario","Modificar usuario","Atras" };
 
     do
     {   
-        opcion = menu.hacerMenu("Mini-Bank", opcMenu, 4);
+        opcion = menu.hacerMenu("Rol de pago", opcMenu, 4);
 
         switch (opcion)
         {
-        case 1:
+        case 1: // Crear
 
             break;
 
-        case 2:
+        case 2: // ver roles
 
-                transaccion = menu.hacerMenu("Realizar Trasaccion", SubMenuTransacciones, 3);
     
             break;
-        case 3:
-
-            transaccion = menu.hacerMenu("Mostrar Cuentas", SubMenuMostrar, 3);
-
+        case 3:{ //buscar usuario
+			string cedula("000000000");
+			try{
+				system("cls");
+				cout<<"Ingrese Cedula:";
+				cin>>cedula;
+			}catch(...){
+								
+			}
+            transaccion = menu.hacerMenu("Usuario", SubMenuMostrar, 4);
+		}
             break;
-
+		
         default:
             system("cls");
             break;

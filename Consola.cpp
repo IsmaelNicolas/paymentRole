@@ -1,7 +1,7 @@
 #include "Consola.h"
 
 Consola::Consola() {
-    SetConsoleTitle("MiniBank");
+    SetConsoleTitle("Rol de pagos");
     ocultarCursor();
 }
 
