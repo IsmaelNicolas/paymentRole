@@ -36,3 +36,7 @@ Makefile.win
 PaymentRole.dev
 PaymentRole.layout
 Makefile.win
+Makefile.win
+*.dev
+*.win
+*.layout
