@@ -30,9 +30,6 @@
 *.exe
 *.out
 *.app
-*.layout
 Makefile.win
 *.json
-PaymentRole.dev
-PaymentRole.layout
 Makefile.win
