@@ -6,7 +6,7 @@
 int Menu::hacerMenu(string mensaje, string* opciones, int indice) {
 
     Fuente fnt;
-    pantalla.ajustarVentana(40,10);
+    pantalla.ajustarVentana(800,100);
     int seleccion = 1;
     int tecla;
     bool bandera = true;
