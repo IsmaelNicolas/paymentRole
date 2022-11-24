@@ -1,5 +1,7 @@
 #include <iostream>
 #include "Menu.h"
+#include "Lists.h"
+#include "FileManager.hpp"
 
 using namespace std;
  
@@ -10,7 +12,7 @@ using namespace std;
 
 int main()
 {
-
+	CircularLinkedList<int> l;
     Menu menu;
     int opcion,transaccion;
     string opcMenu[] = {"Crear Usuario","Ver roles de pago","Buscar Usuario","Salir"};
@@ -23,13 +25,34 @@ int main()
 
         switch (opcion)
         {
-        case 1: // Crear
-
+        case 1:{ // Crear
+        	system("cls");
+        	
+			l.insertEnd(1);
+			l.insertEnd(2);
+			l.insertEnd(4);
+			l.insertEnd(3);
+			l.printList();
+			
+			FileManager f;
+			std::map<std::string,std::string> mapa  = f.readFileCSV("emp.csv");
+			
+			for (auto const& x : mapa)
+			{
+			    std::cout << x.first  // string (key)
+			              << ':' 
+			              << x.second // string's value 
+			              << std::endl;
+			}
+			
+			
+			std::cin.ignore();
+		}
             break;
-
+		
         case 2: // ver roles
-
-    
+			std::cin.ignore();
+    		
             break;
         case 3:{ //buscar usuario
 			string cedula("000000000");
@@ -38,7 +61,7 @@ int main()
 				cout<<"Ingrese Cedula:";
 				cin>>cedula;
 			}catch(...){
-								
+				cout<<"Cedula incorrecta";			
 			}
             transaccion = menu.hacerMenu("Usuario", SubMenuMostrar, 4);
 		}
