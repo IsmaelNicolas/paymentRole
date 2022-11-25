@@ -30,6 +30,4 @@
 *.exe
 *.out
 *.app
-Makefile.win
-*.json
-Makefile.win
+

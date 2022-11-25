@@ -1,40 +1,45 @@
 #include "Filemanager.hpp"
-#include "Lists.h"
-
-
 
 FileManager::FileManager() {
 	
 }
 
-std::map<std::string,std::string> FileManager::readFileCSV(std::string filePath){
+List::simple<Employee> FileManager::readFileCSV(std::string filePath){
 	
-	List::simple<std::map<std::string,std::string>> lista;
+	Employee tmp;
+	List::simple<Employee> lista;
 	std::string row = "";
 	std::string data = "";
-	std::map<std::string,std::string> mapa;
+
 	std::string keys[] = {"Apellido","Nombre","Cedula","Sueldo","Cargo","HS","HE"};
+
 	this->file.open(filePath);
 	
 	if(file.fail()){
 		std::cout<<"Imposible abrir el archivo";
 		std::exit(1);
 	}
-	int i(0);
+	
 	while(std::getline(this->file,row)){
-		i = 0;
+		
 		std::stringstream dataProcess(row);
 		
-		while(std::getline(dataProcess,data,',')){
-			mapa[keys[i]] = data;
-			i+=1;
-		}
+		std::getline(dataProcess,data,',');
+		tmp.set_lastname(data);
+
+		std::getline(dataProcess,data,',');
+		tmp.set_name(data);
+
+		std::getline(dataProcess,data,',');
+		tmp.set_nui(data);
 		
-		lista.push_back(mapa);
-		
+		std::getline(dataProcess,data,',');
+		tmp.set_salary(std::stod(data));
+
+		lista.push_back(tmp);	
 	}
 	
-	//lista.print_list();
+	this->file.close();
 	
-	return mapa;
+	return lista;
 }

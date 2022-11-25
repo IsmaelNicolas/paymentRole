@@ -281,7 +281,7 @@ void simple<T>::print_list()
         
         while (tmp->next != NULL)
         {
-            console_log_2(*tmp,"->");
+            console_log_2(*tmp,",");
             tmp = tmp->next;
         }
             log(tmp->data);
@@ -301,13 +301,18 @@ void simple<T>::print_list_map()
         
         while (tmp->next != NULL)
         {
-            console_log_2(*tmp,"->");
+        	for (auto const& x : tmp->data)
+			{
+			    std::cout << x.first  // string (key)
+			              << ':' 
+			              << x.second // string's value 
+			              << std::endl;
+			}
+            //console_log_2(*tmp,"->");
             tmp = tmp->next;
         }
             log(tmp->data);
-    
     }
-
 }
 
 template<class T>

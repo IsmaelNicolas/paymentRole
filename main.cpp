@@ -1,19 +1,15 @@
 #include <iostream>
 #include "Menu.h"
-#include "Lists.h"
 #include "FileManager.hpp"
 
 #include "TextTable.h"
 #include <regex>
 #include <string>
-#include "main.h"
 
 using namespace std;
  
 //void menu(Lista* cuentas);
 //void mostrarmenu();
-
-
 
 int main()
 {
@@ -33,19 +29,21 @@ int main()
         case 1:{ // Crear
         	system("cls");
 			FileManager f;
-			std::map<std::string,std::string> mapaDatosEmpleados  = f.readFileCSV("emp.csv");
-
+			
+			List::simple<Employee> l  = f.readFileCSV("emp.csv");
+			
+			l.print_list();		
+/*		
 			TextTable tabla('-', '|', '+');
 
 			crearEncabezado(mapaDatosEmpleados, tabla);
 
-			for (auto const& x : mapaDatosEmpleados)
 			{
 				tabla.add(x.second);
 			}
 			tabla.endOfRow();
 			cout << tabla;
-			
+*/			
 			
 			std::cin.ignore();
 		}
