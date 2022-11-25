@@ -1,6 +1,7 @@
 #ifndef EMPLOYEE_H
 #define EMPLOYEE_H
 
+#include "consts.hpp"
 #include <iostream>
 #include <string>
 
@@ -17,6 +18,7 @@ class Employee
 		void set_position(std::string);
 		void set_overtime(double);
 		void set_sup_hours(double);
+		void setAdvance(double);
 		//getter
 		std::string get_nui();
 		std::string get_name();
@@ -35,6 +37,12 @@ class Employee
 			out<<"}";
 			return out;
 		}
+		void calculateIessIncome();
+		void calculateReserveFund();
+		void calculateTotalIncome();
+		void calculateIess();		
+		void calculateTotalOutput();
+		void calculateToRecieve();
 	private:
 		std::string nui;
 		std::string name;
@@ -43,6 +51,14 @@ class Employee
 		std::string position;
 		double overtime;
 		double sup_hours;
+		double totalIncomeIess;
+		double reserveFund;
+		double totalIncome;
+		double iess;
+		double advance;
+		double totalOutput;
+		double toRecieve;
+		
 };
 
 #endif

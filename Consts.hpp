@@ -1,2 +1,2 @@
-#define iess 9.45/100
-#define reserveFund 8.33/100
+#define iessConst 9.45/100
+#define reserveFundConst 8.33/100
