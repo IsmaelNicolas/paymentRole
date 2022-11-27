@@ -1,7 +1,7 @@
 #include "Employee.h"
 
-
 Employee::Employee(){
+	
 	this->name = "not found";
 	this->lastname =  "not found";
 	this->salary = -1;

@@ -186,6 +186,9 @@ namespace List
         bool clean();
         bool is_empy();
         int get_size();
+        Node<T>* buscarCedula(std::string cedula);
+        void printRowNode(Node<T>* elementoEncontrado);
+
         Node<T>* get_node()const
         {
             return this->object;
@@ -244,6 +247,40 @@ bool simple<T>::is_empy() {return this->size==0? true:false;}
 
 template<class T>
 int simple<T>::get_size(){return this->size;}
+
+template<typename T>
+inline Node<T>* simple<T>::buscarCedula(std::string cedula)
+{
+    if (size == 0) {
+        log("Lista vacia");
+    }
+    else {
+        Node<T>* tmp = this->object;
+
+            while (tmp != NULL)
+            {
+                if (tmp->data.get_nui() == cedula) {
+                    //std::cout << tmp->data.name << "Encontrado" << std::endl;
+                    log(tmp->data);
+                    system("pause");
+                    return tmp;
+                }
+                tmp = tmp->next;
+             
+            }       
+
+    }
+    return nullptr;
+}
+
+template<typename T>
+inline void simple<T>::printRowNode(Node<T>* elementoEncontrado)
+{
+    std::cout << elementoEncontrado->data.name << "Encontrado" << std::endl;
+    system("pause");
+}
+
+
 
 template<class T>
 void simple<T>::operator+=(const Node<T> &nd)

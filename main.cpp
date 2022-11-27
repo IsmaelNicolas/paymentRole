@@ -5,6 +5,7 @@
 #include "TextTable.h"
 #include <regex>
 #include <string>
+#include "main.h"
 
 using namespace std;
  
@@ -28,25 +29,10 @@ int main()
         {
         case 1:{ // Crear
         	system("cls");
-			FileManager f;
-			
-			List::simple<Employee> l  = f.readFileCSV("emp.csv");
-			
-			l.print_list();		
-/*		
-			TextTable tabla('-', '|', '+');
-
-			crearEncabezado(mapaDatosEmpleados, tabla);
-
-			{
-				tabla.add(x.second);
-			}
-			tabla.endOfRow();
-			cout << tabla;
-*/			
-			
-			std::cin.ignore();
-		}
+			FileManager f;			
+			List::simple<Employee> l  = f.readFileCSV("emp.csv");			
+			l.print_list();					
+			std::cin.ignore();		}
             break;
 		
         case 2: // ver roles
@@ -54,30 +40,28 @@ int main()
     		
             break;
         case 3:{ //buscar usuario
-			bool coincideRegex=false;
-			string cedula("000000000");
-			try{
-				while (!coincideRegex) {
-					system("cls");
-					cout << "Ingrese Cedula:";
-					cin >> cedula;
-					if (regex_match(string(cedula), regex("^[0-9]{10}$"))) {
-						cout << "encontro";
+			bool validData = false;
+			std::string cedula("000000000");
+			while (!validData) {
+				system("cls");
+				std::cout << "Ingrese Cedula:";
+				std::cin >> cedula;
+				if (regex_match(string(cedula), regex("^[0-9]{10}$"))) {
+					validData = true;
+					FileManager f;
+					List::simple<Employee> l = f.readFileCSV("emp.csv");
+					if (!l.buscarCedula(cedula)) {
+						std::cout << "no se encontro la cedula" << std::endl;
 						system("pause");
-						coincideRegex = true;
-					}
-					else {
-						cout << "repite";
-						system("pause");
+						validData = false;
 					}
 				}
-				cout << "Busqueda:";
-
-				
-
-			}catch(...){
-				cout<<"Cedula incorrecta";			
+				else {
+					std::cout << "repite";
+					system("pause");
+				}
 			}
+			std::cout << "Busqueda:";
             transaccion = menu.hacerMenu("Usuario", SubMenuMostrar, 4);
 		}
             break;

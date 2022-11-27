@@ -2,13 +2,16 @@
 #define EMPLOYEE_H
 
 #include "consts.hpp"
+//#include "Lists.h"
 #include <iostream>
 #include <string>
+//template<class T>
 
 class Employee
 {
 	public:
-		//constructor
+		//friend class Node<T>;
+		//constructor		
 		Employee();
 		//setter 
 		void set_nui(std::string);
