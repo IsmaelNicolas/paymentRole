@@ -3,6 +3,7 @@
 #include "FileManager.hpp"
 
 #include "TextTable.h"
+#include "Utils.h"
 #include <regex>
 #include <string>
 #include "main.h"
@@ -30,9 +31,21 @@ int main()
         case 1:{ // Crear
         	system("cls");
 			FileManager f;			
-			List::simple<Employee> l  = f.readFileCSV("emp.csv");			
-			l.print_list();					
-			std::cin.ignore();		}
+			//			
+			//	
+
+			Employee emp = Utils::get_data();
+
+						f.writeFileCSV("emp.csv",emp);	
+			std::cin.ignore();			std::cin.ignore();
+			
+			List::simple<Employee> l  = f.readFileCSV("emp.csv");
+			l.print_list();
+			
+			std::cin.ignore();
+			std::cin.ignore();
+			
+		}
             break;
 		
         case 2: // ver roles

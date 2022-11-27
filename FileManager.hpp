@@ -11,7 +11,7 @@ class FileManager
 	public:
 		FileManager();
 		List::simple<Employee> readFileCSV(std::string);
-		void writeFileCSV(std::string);
+		void writeFileCSV(std::string,Employee);
 		
 	private:	
 		std::fstream file;
