@@ -3,6 +3,7 @@
 #include "FileManager.hpp"
 
 #include "TextTable.h"
+#include "Utils.h"
 #include <regex>
 #include <string>
 
@@ -30,9 +31,13 @@ int main()
         	system("cls");
 			FileManager f;
 			
-			List::simple<Employee> l  = f.readFileCSV("emp.csv");
+			//
 			
-			l.print_list();		
+			//	
+
+			Employee emp = Utils::get_data();
+
+			f.writeFileCSV("emp.csv",emp);	
 /*		
 			TextTable tabla('-', '|', '+');
 
@@ -46,6 +51,14 @@ int main()
 */			
 			
 			std::cin.ignore();
+			std::cin.ignore();
+			
+			List::simple<Employee> l  = f.readFileCSV("emp.csv");
+			l.print_list();
+			
+			std::cin.ignore();
+			std::cin.ignore();
+			
 		}
             break;
 		

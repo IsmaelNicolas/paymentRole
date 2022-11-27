@@ -33,6 +33,10 @@ void Employee::set_salary(double salary){
 	this->salary = salary;
 }
 
+void Employee::set_position(std::string position){
+	this->position =position;
+}
+
 void Employee::calculateIessIncome(){
 	this->totalIncomeIess=this->salary+this->sup_hours;
 }
