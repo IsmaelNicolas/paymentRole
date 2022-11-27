@@ -2,10 +2,8 @@
 #define EMPLOYEE_H
 
 #include "consts.hpp"
-//#include "Lists.h"
 #include <iostream>
 #include <string>
-//template<class T>
 
 class Employee
 {

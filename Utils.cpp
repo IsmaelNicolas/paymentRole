@@ -6,6 +6,7 @@ Employee Utils::get_data(){
 	std::string str_data;
 	std::cout<<"Cedula: ";
 	std::cin>>str_data; emp.set_nui(str_data);
+	//validar cedula y ver si existe
 	str_data= "";
 	std::cout<<"\nApellido: ";
 	std::cin>>str_data; emp.set_lastname(str_data);

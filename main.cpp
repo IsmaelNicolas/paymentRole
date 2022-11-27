@@ -6,53 +6,43 @@
 #include "Utils.h"
 #include <regex>
 #include <string>
-#include "main.h"
 
 using namespace std;
- 
+
 //void menu(Lista* cuentas);
 //void mostrarmenu();
 
 int main()
 {
 	CircularLinkedList<int> listaCircular;
-    Menu menu;
-    int opcion,transaccion;
-    string opcMenu[] = {"Crear Usuario","Ver roles de pago","Buscar Usuario","Salir"};
-    string SubMenuTransacciones[] = {"Retiro","Deposito","Atras"};
-    string SubMenuMostrar[] = { "Ver usuario","Eliminar usuario","Modificar usuario","Atras" };
-	
-    do
-    {   
-        opcion = menu.hacerMenu("Rol de pago", opcMenu, 4);
-		
-        switch (opcion)
-        {
-        case 1:{ // Crear
-        	system("cls");
-			FileManager f;			
-			//			
-			//	
+	Menu menu;
+	int opcion, transaccion;
+	string opcMenu[] = { "Crear Usuario","Ver roles de pago","Buscar Usuario","Salir" };
+	string SubMenuTransacciones[] = { "Retiro","Deposito","Atras" };
+	string SubMenuMostrar[] = { "Ver usuario","Eliminar usuario","Modificar usuario","Atras" };
 
+	do
+	{
+		opcion = menu.hacerMenu("Rol de pago", opcMenu, 4);
+
+		switch (opcion)
+		{
+		case 1: { // Crear
+			system("cls");
+			FileManager f;
 			Employee emp = Utils::get_data();
 
-						f.writeFileCSV("emp.csv",emp);	
-			std::cin.ignore();			std::cin.ignore();
-			
-			List::simple<Employee> l  = f.readFileCSV("emp.csv");
-			l.print_list();
-			
+			f.writeFileCSV("emp.csv", emp);
 			std::cin.ignore();
-			std::cin.ignore();
-			
+
 		}
-            break;
-		
-        case 2: // ver roles
+			  break;
+
+		case 2: // ver roles
 			std::cin.ignore();
-    		
-            break;
-        case 3:{ //buscar usuario
+
+			break;
+		case 3: { //buscar usuario
 			bool validData = false;
 			std::string cedula("000000000");
 			while (!validData) {
@@ -75,19 +65,19 @@ int main()
 				}
 			}
 			std::cout << "Busqueda:";
-            transaccion = menu.hacerMenu("Usuario", SubMenuMostrar, 4);
+			transaccion = menu.hacerMenu("Usuario", SubMenuMostrar, 4);
 		}
-            break;
-		
-        default:
-            system("cls");
-            break;
-        }
+			  break;
 
-    } while (opcion > 0 && opcion <4);
-    
-    
-    
+		default:
+			system("cls");
+			break;
+		}
+
+	} while (opcion > 0 && opcion < 4);
+
+
+
 
 }
 
