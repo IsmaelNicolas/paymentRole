@@ -38,9 +38,13 @@ int main()
 		}
 			  break;
 
-		case 2: // ver roles
+		case 2: {// ver roles
+			FileManager f;
+			List::simple<Employee> l = f.readFileCSV("emp.csv");
+			system("cls");
+			l.print_list();
 			std::cin.ignore();
-
+		}
 			break;
 		case 3: { //buscar usuario
 			bool validData = false;
