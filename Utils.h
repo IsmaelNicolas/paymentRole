@@ -4,11 +4,13 @@
 #include "Employee.h"
 #include <string>
 #include <iostream>
+#include <regex>
 
 class Utils
 {
 	public:
 		static Employee get_data();
+		static bool notValidID(std::string& _id);
 	private:
 };
 
