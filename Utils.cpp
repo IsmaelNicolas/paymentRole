@@ -38,7 +38,8 @@ Employee Utils::get_data(){
 	
 	str_data= "";
 	std::cout<<"\nSueldo: ";
-	std::cin>>str_data; emp.set_position(str_data);
+	std::cin>>str_data; emp.set_salary(std::stod(str_data));
+	
 	
 	return emp;
 }

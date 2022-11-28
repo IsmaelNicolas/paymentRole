@@ -263,7 +263,7 @@ inline Node<T>* simple<T>::buscarCedula(std::string cedula)
             {
                 if (tmp->data.get_nui() == cedula) {
                     //std::cout << tmp->data.name << "Encontrado" << std::endl;
-                    //log(tmp->data);
+                    log(tmp->data);
                     //system("pause");
                     return tmp;
                 }

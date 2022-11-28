@@ -1,13 +1,21 @@
 #include "Employee.h"
 
+#include <stdlib.h>
+#include <time.h>
+#include <random>
+#include <iomanip>
+#define FLOAT_MIN 1
+#define FLOAT_MAX 100
+
 Employee::Employee(){
 	
+	srand(time(NULL));
 	this->name = "not found";
 	this->lastname =  "not found";
 	this->salary = -1;
 	this->nui = "not found";
-	this->overtime = -1;
-	this->sup_hours = -1;
+	this->overtime = FLOAT_MIN + (float)(rand()) / ((float)(RAND_MAX/(FLOAT_MAX - FLOAT_MIN)));
+	this->sup_hours = FLOAT_MIN + (float)(rand()) / ((float)(RAND_MAX/(FLOAT_MAX - FLOAT_MIN)));
 	this->position = "not found";
 	this->totalIncome = -1;
 	this->iess=-1;
@@ -75,4 +83,13 @@ std::string Employee::get_name() {return this->name;}
 
 std::string Employee::get_lastname() {return this->lastname;}
 
+std::string Employee::get_position(){return this->position;}
+
 double Employee::get_salary() {return this->salary;} 
+
+double Employee::get_overtime(){return this->overtime;}
+
+double Employee::get_sup_hours(){return this->sup_hours;}
+
+
+

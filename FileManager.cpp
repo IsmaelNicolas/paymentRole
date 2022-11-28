@@ -59,7 +59,7 @@ void FileManager::writeFileCSV(std::string filePath,Employee emp){
 	std::ofstream file;
 	file.open(filePath,std::ios_base::app);
 	
-	file<< emp.get_lastname() << "," << emp.get_name() << "," << emp.get_nui() << "," << emp.get_salary() << "\n";
+	file<< emp.get_lastname() << "," << emp.get_name() << "," << emp.get_nui() << "," << emp.get_salary() <<","<<emp.get_position()<<","<<emp.get_sup_hours()<<","<<emp.get_overtime() <<"\n";
 	
 	file.close();
 	
