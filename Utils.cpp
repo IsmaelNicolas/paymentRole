@@ -36,9 +36,21 @@ Employee Utils::get_data(){
 	std::cout<<"\nCargo: ";
 	std::cin>>str_data; emp.set_position(str_data);
 	
-	str_data= "";
-	std::cout<<"\nSueldo: ";
-	std::cin>>str_data; emp.set_salary(std::stod(str_data));
+    bool sueldoCorrecto = false;
+    while (!sueldoCorrecto) {
+        str_data= "";
+        std::cout<<"\nSueldo: ";
+        std::cin>>str_data; 
+        if (!regex_match(std::string(str_data), std::regex("^[0-9]*\.[0-9]{2}$"))) {
+            std::cout << "Sueldo invalido (ej: 29.30)" << std::endl;
+            system("pause");
+            system("cls");
+        }
+        else {
+            sueldoCorrecto = true;
+        }
+    }
+        emp.set_salary(std::stod(str_data));
 	
 	return emp;
 }

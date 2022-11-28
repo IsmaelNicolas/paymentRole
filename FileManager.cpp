@@ -26,22 +26,22 @@ List::simple<Employee> FileManager::readFileCSV(std::string filePath){
 		std::stringstream dataProcess(row);
 		
 		std::getline(dataProcess,data,',');
-		tmp.set_nui(data);
+		tmp.nui = data;
 
 		std::getline(dataProcess,data,',');
-		tmp.set_lastname(data);
+		tmp.lastname = data;
 		
 		std::getline(dataProcess,data,',');
-		tmp.set_position(data);
+		tmp.position = data;
 
 		std::getline(dataProcess,data,',');
-		tmp.set_salary(std::stod(data));
+		tmp.salary = stod(data);
 		
 		std::getline(dataProcess,data,',');
-		tmp.set_sup_hours(std::stod(data));
+		tmp.sup_hours = std::stod(data);
 
 		std::getline(dataProcess,data,',');
-		tmp.set_overtime(std::stod(data));
+		tmp.overtime = std::stod(data);
 
 		std::getline(dataProcess, data, ',');
 		tmp.totalIncomeIess = (std::stod(data));
