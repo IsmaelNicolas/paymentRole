@@ -54,7 +54,7 @@ void Employee::set_sup_hours(double salary){
 }
 
 void Employee::calculateIessIncome(){
-	this->totalIncomeIess=this->salary+this->sup_hours;
+	this->totalIncomeIess=this->salary+this->sup_hours+this->overtime;
 }
 
 void Employee::calculateReserveFund(){
