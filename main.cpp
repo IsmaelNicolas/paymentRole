@@ -31,6 +31,7 @@ int main()
 			FileManager f;
 			Employee emp = Utils::get_data();
 			f.writeFileCSV("emp.csv", emp);
+			std::cout<<emp;
 			std::cin.ignore();
 		}
 		break;
@@ -66,7 +67,28 @@ int main()
 				}
 			}
 			std::cout << "Busqueda:";
+			std::cin.ignore();
 			transaccion = menu.hacerMenu("Usuario", SubMenuMostrar, 4);
+			
+			switch(transaccion){
+				case 1:
+					system("cls");
+					std::cout<<"Perfil";
+					std::cin.ignore();
+					break;
+				case 2:
+					system("cls");
+					std::cout<<"Eliminar";
+					std::cin.ignore();
+					break;
+				case 3:
+					system("cls");
+					std::cout<<"Modificar";
+					std::cin.ignore();
+					break;
+			}
+			
+			
 		}
 		break;
 		default:

@@ -24,6 +24,9 @@ class Employee
 		std::string get_nui();
 		std::string get_name();
 		std::string get_lastname();
+		std::string get_position();
+		double get_overtime();
+		double get_sup_hours(); 
 		double get_salary();
 		//methods
 		friend std::ostream &operator <<(std::ostream&out,const Employee &emp){

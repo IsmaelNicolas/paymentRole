@@ -6,6 +6,7 @@
 #define FLOAT_MIN 1
 #define FLOAT_MAX 100
 
+
 Employee::Employee(){
 	
 	srand(time(NULL));
@@ -82,4 +83,13 @@ std::string Employee::get_name() {return this->name;}
 
 std::string Employee::get_lastname() {return this->lastname;}
 
+std::string Employee::get_position(){return this->position;}
+
 double Employee::get_salary() {return this->salary;} 
+
+double Employee::get_overtime(){return this->overtime;}
+
+double Employee::get_sup_hours(){return this->sup_hours;}
+
+
+
