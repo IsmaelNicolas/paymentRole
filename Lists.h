@@ -262,7 +262,6 @@ inline Node<T>* simple<T>::buscarCedula(std::string cedula)
             while (tmp != NULL)
             {
                 if (tmp->data.get_nui() == cedula) {
-                    log(tmp->data);
                     return tmp;
                 }
                 tmp = tmp->next;
@@ -324,14 +323,6 @@ inline void simple<T>::printTable()
 
     }
 }
-
-template<typename T>
-inline void simple<T>::printRowNode(Node<T>* elementoEncontrado)
-{
-    std::cout << elementoEncontrado->data.name << "Encontrado" << std::endl;
-    system("pause");
-}
-
 
 
 template<class T>

@@ -83,7 +83,6 @@ void FileManager::writeFileCSV(std::string filePath,Employee emp){
 	emp.calculateTotalOutput();
 	emp.calculateToRecieve();
 	file << emp.get_nui() << "," << emp.get_lastname() << "," << emp.position << "," << emp.salary << "," << emp.sup_hours << "," << emp.overtime << "," << emp.totalIncomeIess << "," << emp.reserveFund << "," << emp.totalIncome << "," << emp.iess << "," << emp.advance << "," << emp.totalOutput << "," << emp.toRecieve<<"\n";
-	//file<< emp.get_lastname() << "," << emp.get_name() << "," << emp.get_nui() << "," << emp.get_salary() << "\n";
 	
 	file.close();
 	

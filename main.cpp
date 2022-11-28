@@ -8,9 +8,6 @@
 
 using namespace std;
 
-//void menu(Lista* cuentas);
-//void mostrarmenu();
-
 int main()
 {
 	CircularLinkedList<int> listaCircular;
