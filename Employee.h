@@ -31,13 +31,16 @@ class Employee
 		//methods
 		friend std::ostream &operator <<(std::ostream&out,const Employee &emp){
 			out<<std::endl<<"{"<<std::endl;
-			out<<"	name: "<<emp.name<<","<<std::endl;
-			out<<"	lastname: "<<emp.lastname<<","<<std::endl;
-			out<<"	nui: "<<emp.nui<<","<<std::endl;
-			out<<"	salary: $"<<emp.salary<<","<<std::endl;
-			out<<"	position: "<<emp.position<<","<<std::endl;
-			out<<"	overtime: $"<<emp.overtime<<","<<std::endl;
-			out<<"	supplementary hours: $"<< emp.sup_hours<<","<<std::endl;
+			out<<"	Apellido: "<<emp.lastname<<","<<std::endl;
+			out<<"	Cedula: "<<emp.nui<<","<<std::endl;
+			out<<"	Salario: $"<<emp.salary<<","<<std::endl;
+			out<<"	Posicion: "<<emp.position<<","<<std::endl;
+			out<<"	Horas Ext: $"<<emp.overtime<<","<<std::endl;
+			out<<"	Horas Sup: $"<< emp.sup_hours<<","<<std::endl;
+			out<<"	Anticipo: $"<< emp.advance<<","<<std::endl;
+			out<<"	IESS: $"<< emp.iess<<","<<std::endl;
+			out<<"	A Recibir: $"<< emp.toRecieve<<std::endl;
+
 			out<<"}";
 			return out;
 		}

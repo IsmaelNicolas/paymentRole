@@ -19,7 +19,7 @@ int main()
 	string opcMenu[] = { "Crear Usuario","Ver roles de pago","Buscar Usuario","Salir" };
 	string SubMenuTransacciones[] = { "Retiro","Deposito","Atras" };
 	string SubMenuMostrar[] = { "Ver usuario","Eliminar usuario","Modificar usuario","Atras" };
-
+	Node<Employee>* busquedaEmp = nullptr;
 	do
 	{
 		opcion = menu.hacerMenu("Rol de pago", opcMenu, 4);
@@ -54,7 +54,8 @@ int main()
 					validData = true;
 					FileManager f;
 					List::simple<Employee> l = f.readFileCSV("emp.csv");
-					if (!l.buscarCedula(cedula)) {
+					busquedaEmp = l.buscarCedula(cedula);
+					if (!busquedaEmp) {
 						std::cout << "no se encontro la cedula" << std::endl;
 						system("pause");
 						validData = false;
@@ -72,17 +73,20 @@ int main()
 			switch(transaccion){
 				case 1:
 					system("cls");
-					std::cout<<"Perfil";
+					std::cout << "Perfil" << std::endl;
+					std::cout << busquedaEmp->data << endl;
 					std::cin.ignore();
 					break;
 				case 2:
 					system("cls");
 					std::cout<<"Eliminar";
+
 					std::cin.ignore();
 					break;
 				case 3:
 					system("cls");
 					std::cout<<"Modificar";
+
 					std::cin.ignore();
 					break;
 			}
