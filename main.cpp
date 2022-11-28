@@ -31,8 +31,10 @@ int main()
 			system("cls");
 			FileManager f;
 			Employee emp = Utils::get_data();
-
-			f.writeFileCSV("emp.csv", emp);
+			if (emp.get_lastname() != "not found"){
+				f.writeFileCSV("emp.csv", emp);
+			}
+			
 			std::cin.ignore();
 
 		}

@@ -37,6 +37,14 @@ void Employee::set_position(std::string position){
 	this->position =position;
 }
 
+void Employee::set_overtime(double overtime){
+	this->overtime = overtime;
+}
+
+void Employee::set_sup_hours(double salary){
+	this->sup_hours = sup_hours;
+}
+
 void Employee::calculateIessIncome(){
 	this->totalIncomeIess=this->salary+this->sup_hours;
 }
