@@ -37,6 +37,7 @@ int main()
 		case 2: {
 			FileManager f;
 			List::simple<Employee> l = f.readFileCSV("emp.csv");
+			//l.print_list();
 			system("cls");
 			l.printTable();
 			system("pause");

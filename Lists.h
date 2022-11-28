@@ -300,23 +300,24 @@ inline void simple<T>::printTable()
     }
     else {
         Node<T>* tmp = this->object;
-        
+        std::string position = tmp->data.position;
+        //std::string salary = (std::string(tmp->data.salary);
             while (tmp != NULL)
             {
-                tabla.add(string(tmp->data.nui));
+                tabla.add(std::string(tmp->data.nui));
 
-                tabla.add(string(tmp->data.name));
-                //tabla.add((tmp->data.position);
-                //tabla.add((string(tmp->data.salary));
-                //tabla.add((string(tmp->data.sup_hours));
-                //tabla.add((string(tmp->data.overtime));
-                //tabla.add((string(tmp->data.totalIncomeIess));
-                //tabla.add((string(tmp->data.reserveFund));
-                //tabla.add((string(tmp->data.totalIncome));
-                //tabla.add((string(tmp->data.iess));
-                //tabla.add((string(tmp->data.advance));
-                //tabla.add((string(tmp->data.totalOutput));
-                //tabla.add((string(tmp->data.toRecieve));
+                tabla.add(std::string(tmp->data.lastname));
+                tabla.add(position);
+                tabla.add((std::to_string(tmp->data.salary)));
+                tabla.add((to_string(tmp->data.sup_hours)));
+                tabla.add((to_string(tmp->data.overtime)));
+                tabla.add((to_string(tmp->data.totalIncomeIess)));
+                tabla.add((to_string(tmp->data.reserveFund)));
+                tabla.add((to_string(tmp->data.totalIncome)));
+                tabla.add((to_string(tmp->data.iess)));
+                tabla.add((to_string(tmp->data.advance)));
+                tabla.add((to_string(tmp->data.totalOutput)));
+                tabla.add((to_string(tmp->data.toRecieve)));
 
                 tabla.endOfRow();
                 tmp = tmp->next;
