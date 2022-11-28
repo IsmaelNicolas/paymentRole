@@ -44,14 +44,14 @@ class Employee
 		void calculateIess();		
 		void calculateTotalOutput();
 		void calculateToRecieve();
-	private:
+	public:
 		std::string nui;
 		std::string name;
 		std::string lastname;
-		double salary;
 		std::string position;
-		double overtime;
+		double salary;
 		double sup_hours;
+		double overtime;
 		double totalIncomeIess;
 		double reserveFund;
 		double totalIncome;
@@ -59,6 +59,7 @@ class Employee
 		double advance;
 		double totalOutput;
 		double toRecieve;
+
 		
 };
 

@@ -1,4 +1,5 @@
 #include <iostream>
+#include "TextTable.h"
 #define log(val) std::cout<<val<<std::endl;
 #define log_2(val_1,val_2) std::cout<<val_1<<val_2<<std::endl;
 #define console_log(val) std::cout<<val;
@@ -187,6 +188,7 @@ namespace List
         bool is_empy();
         int get_size();
         Node<T>* buscarCedula(std::string cedula);
+        void printTable();
         void printRowNode(Node<T>* elementoEncontrado);
 
         Node<T>* get_node()const
@@ -271,6 +273,57 @@ inline Node<T>* simple<T>::buscarCedula(std::string cedula)
 
     }
     return nullptr;
+}
+
+template<typename T>
+inline void simple<T>::printTable()
+{
+    
+    TextTable tabla('-', '|', '+');
+    tabla.add("Cedula");
+    tabla.add("Nomina");
+    tabla.add("Cargo");
+    tabla.add("Salario");
+    tabla.add("M.H.S");
+    tabla.add("M.H.E");
+    tabla.add("T.IESS");
+    tabla.add("F.R");
+    tabla.add("Ingreso T");
+    tabla.add("IESS");
+    tabla.add("Anticipo");
+    tabla.add("Egreso T");
+    tabla.add("A Recibir");
+    tabla.endOfRow();
+
+    if (size == 0) {
+        log("Lista vacia");
+    }
+    else {
+        Node<T>* tmp = this->object;
+        
+            while (tmp->next != NULL)
+            {
+                tabla.add(string(tmp->data.nui));
+
+                tabla.add(string(tmp->data.name));
+                //tabla.add((tmp->data.position);
+                //tabla.add((string(tmp->data.salary));
+                //tabla.add((string(tmp->data.sup_hours));
+                //tabla.add((string(tmp->data.overtime));
+                //tabla.add((string(tmp->data.totalIncomeIess));
+                //tabla.add((string(tmp->data.reserveFund));
+                //tabla.add((string(tmp->data.totalIncome));
+                //tabla.add((string(tmp->data.iess));
+                //tabla.add((string(tmp->data.advance));
+                //tabla.add((string(tmp->data.totalOutput));
+                //tabla.add((string(tmp->data.toRecieve));
+
+                tabla.endOfRow();
+                tmp = tmp->next;
+            }
+            std::cout << tabla << std::endl;
+
+    }
 }
 
 template<typename T>

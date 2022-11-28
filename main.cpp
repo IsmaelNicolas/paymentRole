@@ -2,7 +2,6 @@
 #include "Menu.h"
 #include "FileManager.hpp"
 
-#include "TextTable.h"
 #include "Utils.h"
 #include <regex>
 #include <string>
@@ -31,17 +30,18 @@ int main()
 			system("cls");
 			FileManager f;
 			Employee emp = Utils::get_data();
-
 			f.writeFileCSV("emp.csv", emp);
 			std::cin.ignore();
-
 		}
-			  break;
-
-		case 2: // ver roles
-			std::cin.ignore();
-
-			break;
+		break;
+		case 2: {
+			FileManager f;
+			List::simple<Employee> l = f.readFileCSV("emp.csv");
+			system("cls");
+			l.printTable();
+			system("pause");
+		}
+		break;
 		case 3: { //buscar usuario
 			bool validData = false;
 			std::string cedula("000000000");
@@ -67,8 +67,7 @@ int main()
 			std::cout << "Busqueda:";
 			transaccion = menu.hacerMenu("Usuario", SubMenuMostrar, 4);
 		}
-			  break;
-
+		break;
 		default:
 			system("cls");
 			break;
@@ -81,11 +80,3 @@ int main()
 
 }
 
-void crearEncabezado(std::map<std::string, std::string>& mapa, TextTable& t)
-{
-	for (auto const& x : mapa)
-	{
-		t.add(x.first);
-	}
-	t.endOfRow();
-}
