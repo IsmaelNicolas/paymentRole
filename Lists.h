@@ -301,7 +301,7 @@ inline void simple<T>::printTable()
     else {
         Node<T>* tmp = this->object;
         
-            while (tmp->next != NULL)
+            while (tmp != NULL)
             {
                 tabla.add(string(tmp->data.nui));
 

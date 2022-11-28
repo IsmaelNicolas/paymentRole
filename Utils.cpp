@@ -3,27 +3,30 @@
 
 Employee Utils::get_data(){
 	
-	Employee emp;
-	std::string str_data;
+    Employee emp;
+    std::string str_data;
     bool incorrectID = true;
     bool IdExists = true;
     FileManager f;
     List::simple<Employee> l = f.readFileCSV("emp.csv");
-    //while (!incorrectID || IdExists) {
+    while (!incorrectID || IdExists) {
         system("cls");
-	    std::cout<<"Cedula: ";
-	    std::cin>>str_data; 
-        //std::cin.ignore();
+        std::cout << "Cedula: ";
+        std::cin >> str_data;
+        std::cin.ignore();
         emp.set_nui(str_data);
         incorrectID = !notValidID(str_data);
         if (l.buscarCedula(str_data)) {
             system("cls");
-            std::cout << "Cedula existente ingresa una nueva"<<std::endl;
+            std::cout << "Cedula existente ingresa una nueva" << std::endl;
             system("pause");
-			return emp;      
+            IdExists = true;
         }
-    //}
-	str_data= "";
+        else {
+            IdExists = false;
+        }
+    }
+    str_data = "";
 	std::cout<<"\nApellido: ";
 	std::cin>>str_data; emp.set_lastname(str_data);
 	str_data= "";
