@@ -7,20 +7,21 @@ FileManager::FileManager() {
 List::simple<Employee> FileManager::readFileCSV(std::string filePath){
 	
 	Employee tmp;
+	std::fstream file;
 	List::simple<Employee> lista;
 	std::string row = "";
 	std::string data = "";
 
 	std::string keys[] = {"Apellido","Nombre","Cedula","Sueldo","Cargo","HS","HE"};
 
-	this->file.open(filePath);
+	file.open(filePath);
 	
 	if(file.fail()){
 		std::cout<<"Imposible abrir el archivo";
 		std::exit(1);
 	}
 	
-	while(std::getline(this->file,row)){
+	while(std::getline(file,row)){
 		
 		std::stringstream dataProcess(row);
 		
@@ -36,10 +37,19 @@ List::simple<Employee> FileManager::readFileCSV(std::string filePath){
 		std::getline(dataProcess,data,',');
 		tmp.set_salary(std::stod(data));
 
+		std::getline(dataProcess,data,',');
+		tmp.set_position(data);
+		
+		std::getline(dataProcess,data,',');
+		tmp.set_sup_hours(std::stod(data));
+
+		std::getline(dataProcess,data,',');
+		tmp.set_overtime(std::stod(data));
+
 		lista.push_back(tmp);	
 	}
 	
-	this->file.close();
+	file.close();
 	
 	return lista;
 }

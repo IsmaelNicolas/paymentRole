@@ -14,6 +14,6 @@ class FileManager
 		void writeFileCSV(std::string,Employee);
 		
 	private:	
-		std::fstream file;
+		
 		
 };

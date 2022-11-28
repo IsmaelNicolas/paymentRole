@@ -31,10 +31,10 @@ class Employee
 			out<<"	name: "<<emp.name<<","<<std::endl;
 			out<<"	lastname: "<<emp.lastname<<","<<std::endl;
 			out<<"	nui: "<<emp.nui<<","<<std::endl;
-			out<<"	salary: "<<emp.salary<<","<<std::endl;
+			out<<"	salary: $"<<emp.salary<<","<<std::endl;
 			out<<"	position: "<<emp.position<<","<<std::endl;
-			out<<"	overtime: "<<emp.overtime<<","<<std::endl;
-			out<<"	supplementary hours: "<<emp.sup_hours<<","<<std::endl;
+			out<<"	overtime: $"<<emp.overtime<<","<<std::endl;
+			out<<"	supplementary hours: $"<< emp.sup_hours<<","<<std::endl;
 			out<<"}";
 			return out;
 		}
