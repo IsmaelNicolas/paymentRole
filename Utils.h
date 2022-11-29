@@ -11,6 +11,7 @@ class Utils
 	public:
 		static Employee get_data();
 		static bool notValidID(std::string& _id);
+		//static List::simple<Employee> deleteEmployee(Employee emp);
 	private:
 };
 

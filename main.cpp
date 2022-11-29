@@ -14,8 +14,7 @@ int main()
 	Menu menu;
 	int opcion, transaccion;
 	string opcMenu[] = { "Crear Usuario","Ver roles de pago","Buscar Usuario","Salir" };
-	string SubMenuTransacciones[] = { "Retiro","Deposito","Atras" };
-	string SubMenuMostrar[] = { "Ver usuario","Eliminar usuario","Modificar usuario","Atras" };
+	string SubMenuMostrar[] = { "Ver usuario","Eliminar usuario","Atras" };
 	Node<Employee>* busquedaEmp = nullptr;
 	do
 	{
@@ -65,7 +64,7 @@ int main()
 			}
 			std::cout << "Busqueda:";
 			std::cin.ignore();
-			transaccion = menu.hacerMenu("Usuario", SubMenuMostrar, 4);
+			transaccion = menu.hacerMenu("Usuario", SubMenuMostrar, 3);
 			
 			switch(transaccion){
 				case 1:
@@ -74,21 +73,18 @@ int main()
 					std::cout << busquedaEmp->data << endl;
 					std::cin.ignore();
 					break;
-				case 2:
+				case 2:{				
 					system("cls");
-					std::cout<<"Eliminar";
-
+					std::cout<<"Eliminando empleado:";
+					std::cout<<busquedaEmp->data;
+					FileManager f;
+					f.eraseFileLine("emp.csv",busquedaEmp->data);
+					
 					std::cin.ignore();
-					break;
-				case 3:
-					system("cls");
-					std::cout<<"Modificar";
-
-					std::cin.ignore();
+					}
 					break;
 			}
-			
-			
+	
 		}
 		break;
 		default:

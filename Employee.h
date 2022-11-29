@@ -29,6 +29,11 @@ class Employee
 		double get_sup_hours(); 
 		double get_salary();
 		//methods
+		friend bool operator==(Employee &emp_1,Employee &emp_2){
+			//std::cout<<emp_1.get_nui()<<"=="<<emp_2.get_nui()<<(emp_1.get_nui() == emp_2.get_nui())<<std::endl;
+			return (emp_1.get_nui() == emp_2.get_nui());
+		}
+		
 		friend std::ostream &operator <<(std::ostream&out,const Employee &emp){
 			out<<std::endl<<"{"<<std::endl;
 			out<<"	Apellido: "<<emp.lastname<<","<<std::endl;
@@ -50,7 +55,13 @@ class Employee
 		void calculateIess();		
 		void calculateTotalOutput();
 		void calculateToRecieve();
-	public:
+		/*
+		std::ostream& to_string(){
+			std::ostream &out;
+			out<<this->nui<<","<<this->lastname<<this->position<<this->salary<<"," << this->sup_hours << "," << this->overtime << "," << this->totalIncomeIess << "," << this->reserveFund << "," << this->totalIncome << "," << this->iess << "," << this->advance << "," << this->totalOutput << "," << this->toRecieve<<"\n";
+			return out;
+		}
+		*/
 		std::string nui;
 		std::string name;
 		std::string lastname;

@@ -183,6 +183,7 @@ namespace List
         bool push_after_node(Node<T>,Node<T>);
         bool pop_front(Node<T>);
         bool pop_back(Node<T>);
+        bool erase(T);
         bool remplace(Node<T>,Node<T>);
         bool clean();
         bool is_empy();
@@ -453,6 +454,27 @@ bool simple<T>::clean()
     }
     this->size = 0; 
     return true;
+}
+
+template<class T>
+bool simple<T>::erase(T item){
+	
+	if(this->size==0){
+		return true;
+	}else{
+		Node<T> *tmp = this->object; 
+		Node<T> *tmp1;
+		while(tmp->next != NULL){
+			if(tmp->next->data == item){
+				tmp1= tmp->next;
+				tmp->next = tmp->next->next;
+				break;
+			}else{
+				tmp = tmp->next;
+			}
+		} 
+	}
+	
 }
 
 }

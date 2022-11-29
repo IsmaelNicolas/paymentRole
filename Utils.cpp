@@ -107,3 +107,26 @@ bool Utils::notValidID(std::string& _id)
     }
     
 }
+
+/*
+List::simple<Employee> Utils::deleteEmployee(Employee emp){
+	
+	FileManager f;
+    List::simple<Employee> l = f.readFileCSV("emp.csv");
+	Node<Employee>* tmp = l.get_node();
+	l.print_list();
+	while(tmp->next != NULL){
+		if(emp == tmp->data ){
+			//std::cout<<"eliminando: \n"<<emp;
+			l.erase(emp);
+			std::cout<<"Eliminado correctamente.."<<std::endl;
+			return;
+		}
+		tmp = tmp->next;
+	}
+	
+	std::cout<<"No se pudo eliminar"<<std::endl;
+	
+}
+*/
+

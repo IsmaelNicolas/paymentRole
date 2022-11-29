@@ -12,7 +12,7 @@ class FileManager
 		FileManager();
 		List::simple<Employee> readFileCSV(std::string);
 		void writeFileCSV(std::string,Employee);
-		
+		void eraseFileLine(std::string,Employee);
 	private:	
 		
 		

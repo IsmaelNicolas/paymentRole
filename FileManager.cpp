@@ -1,4 +1,5 @@
 #include "Filemanager.hpp"
+#include "Utils.h"
 
 FileManager::FileManager() {
 	
@@ -87,3 +88,35 @@ void FileManager::writeFileCSV(std::string filePath,Employee emp){
 	file.close();
 	
 }
+
+void FileManager::eraseFileLine(std::string path,Employee emp){
+	
+	std::string data;
+	std::string row;
+	std::ifstream file;
+	std::ofstream tmp;
+	
+	tmp.open("tmp.csv");
+	file.open(path);	
+	
+	while(std::getline(file,row)){
+		std::stringstream dataProcess(row);
+		//std::cout<<row<<std::endl;
+		
+		std::getline(dataProcess,data,',');
+		if(emp.get_nui()!=data){
+			//std::cout<<row<<std::endl;
+			tmp<<row<<"\n";
+		}
+		
+	}
+	
+	tmp.close();
+	file.close();
+	
+	const char * p = path.c_str();
+    remove(p);
+    rename("tmp.csv", p);
+	
+}
+
